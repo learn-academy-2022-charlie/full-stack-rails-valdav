@@ -19,11 +19,12 @@ class BlogController < ApplicationController
     end 
 
     def edit
-        @blog = Blog.new
+        @blog = Blog.find(params[:id])
     end
 
-    def update
-        @blog= Blog.update(blog_params)
+    def update 
+        @blog = Blog.find(params[:id])
+        @blog.update(blog_params)
         if @blog.valid?
             redirect_to blogs_path
         end
