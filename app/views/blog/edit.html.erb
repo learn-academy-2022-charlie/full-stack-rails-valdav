@@ -1,0 +1,13 @@
+<h2>Update</h2>
+
+ <%= form_with(url: blogs_path, method: "patch")%>
+
+<%= form_with url: "/blogs", method: :patch do |form| %>
+  <%= form.button "Edit", formmethod: :edit, data: { confirm: "Are you sure?" } %>
+  <%= form.button "Update" %>
+<% end %> %>
+
+
+
+
+<%= link_to 'update me', blogs_path %>

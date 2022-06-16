@@ -4,4 +4,11 @@
 <p> Content: <%= @blog.content %> </p>
 
 <%= link_to 'Back Home', blogs_path %>
+<p> 
+<%= button_to 'update Blog', edit_blog_path(@blog), method: :update, form: {data:{'turbo-confirm': 'are you sure?'}}%>
+</p>
+
+<p> 
+<%= button_to 'delete Blog', delete_blog_path(@blog), method: :delete, form: {data:{'turbo-confirm': 'are you sure?'}}%>
+</p>
 

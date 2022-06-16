@@ -18,6 +18,25 @@ class BlogController < ApplicationController
         end
     end 
 
+    def edit
+        @blog = Blog.new
+    end
+
+    def update
+        @blog= Blog.update(blog_params)
+        if @blog.valid?
+            redirect_to blogs_path
+        end
+    end 
+
+
+    def destroy
+        @blog = Blog.find(params[:id])
+        if @blog.destroy
+            redirect_to blogs_path
+        end
+    end
+
     private
     def blog_params
         params.require(:blog).permit(:title, :content)
